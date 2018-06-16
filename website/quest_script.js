@@ -1,7 +1,7 @@
 // Script for Quests
 
 function choice(ch) {
-    if (ch == 1) {
+    /*if (ch == 1) {
         document.getElementById("choice1").classList.add("selected")
         document.getElementById("choice2").classList.remove("selected")
 
@@ -15,5 +15,5 @@ function choice(ch) {
 
         document.getElementById("link2").style.display = "inline-block";
         document.getElementById("link1").style.display = "none";
-    }
+    }*/
 }

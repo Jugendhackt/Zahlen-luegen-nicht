@@ -73,17 +73,19 @@ if(isset($_GET['role'])) {
   	</div>
 
   	<div id="choices">
-	  	<div class="choice" id="choice1" onclick="choice(1)">
-		  	<p>Bacon ipsum dolor amet beef ribs short ribs tongue drumstick.</p>
-        <a hidden id="link1" href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($antworten[$ask] == 1) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">
-          Weiter
+        <a id="link1" href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($antworten[$ask] == 1) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">
+            <div class="choice" id="choice1" onclick="choice(1)">
+		      	<p>Bacon ipsum dolor amet beef ribs short ribs tongue drumstick.</p>
+            </div>
         </a>
-        </div>
 
-		  <div class="choice" id="choice2" onclick="choice(2)">
-		  	<p>Bacon ipsum dolor amet beef ribs short ribs tongue drumstick.</p>
-              <a hidden id="link2" href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($antworten[$ask] == 2) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">Weiter</a>
-          </div>
+
+        <a id="link2" href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($antworten[$ask] == 2) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">
+            <div class="choice" id="choice2" onclick="choice(2)">
+                <p>Bacon ipsum dolor amet beef ribs short ribs tongue drumstick.</p>
+            </div>
+        </a>
+
   	</div>
 
     <div id="myProgress">
