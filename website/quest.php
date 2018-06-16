@@ -149,6 +149,30 @@ if (isset($_GET['result'])) {
 
   	</div>
 </div>
+    <!-- Modal 1 -->
+    <div id="modal01" class="w3-modal">
+        <div class="w3-modal-content">
+            <div class="w3-container">
+      <span onclick="document.getElementById('id01').style.display='none'"
+            class="w3-button w3-display-topright">&times;</span>
+                <canvas id="myChart1"></canvas>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal 1 -->
+    <div id="modal02" class="w3-modal">
+        <div class="w3-modal-content">
+            <div class="w3-container">
+      <span onclick="document.getElementById('id02').style.display='none'"
+            class="w3-button w3-display-topright">&times;</span>
+                <canvas id="myChart1"></canvas>
+            </div>
+        </div>
+    </div>
+
+
 
 
     <div id="myProgress">
