@@ -51,6 +51,14 @@ p {
 	border: 12px solid #b2bec3;
 }
 
+#soAuch {
+	padding-top: 0;
+	margin-top: 0;
+}
+#soLaeufts {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
 
 
 
