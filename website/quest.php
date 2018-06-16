@@ -15,6 +15,7 @@ if(isset($_GET['f'])) {
 }
 
 
+
 if(isset($_GET['ask'])) {
     $ask = $_GET['ask'] + 1;
     if ($ask == 6) {
