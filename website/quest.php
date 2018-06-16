@@ -5,11 +5,38 @@ if(isset($_GET['ask'])) {
     $ask = $_GET['ask'] + 1;
     if ($ask == 11) {
         ?>
-        <script>window.location = "result.php";</script>
+        <script>//window.location = "result.php";</script>
         <?php
     }
 } else {
     $ask = 1;
+}
+
+if(isset($_GET['r'])) {
+    $r = $_GET['r'];
+} else {
+    $r = 0;
+}
+
+if(isset($_GET['f'])) {
+    $f = $_GET['f'];
+} else {
+    $f = 0;
+}
+if (isset($_GET['result'])) {
+    if($_GET['result'] == "corr") {
+        $r = $r + 1;
+    } elseif ($_GET['result'] == "wrong") {
+        $f = $f + 1;
+    }
+}
+
+if(isset($_GET['role'])) {
+    $role = $_GET['role'];
+} else {
+    ?>
+    <script>window.location = "index.html";</script>
+    <?php
 }
 ?>
 
@@ -31,7 +58,7 @@ if(isset($_GET['ask'])) {
   </head>
   <body>
 
-  	<h1>Headline</h1>
+  	<h1 onclick="window.location = 'index.html'">Headline</h1>
 
 
   	<div id="explaination">
@@ -44,17 +71,17 @@ if(isset($_GET['ask'])) {
   	<div id="choices">
 	  	<div class="choice" id="choice1" onclick="choice(1)">
 		  	<p>Bacon ipsum dolor amet beef ribs short ribs tongue drumstick.</p>
-            <a href="quest.php?result=<?php if ($antwort == 1) {echo "corr";} else {echo "wrong";} ?>"&ask="<?php echo $ask ?>">Weiter</a>
-		  </div>
+            <a href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($antworten[$ask] == 1) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">Weiter</a>
+        </div>
 
 		  <div class="choice" id="choice2" onclick="choice(2)">
 		  	<p>Bacon ipsum dolor amet beef ribs short ribs tongue drumstick.</p>
-              <a href="quest.php?result=<?php if ($antwort == 2) {echo "corr";} else {echo "wrong";} ?>"&ask="<?php echo $ask ?>">Weiter</a>
+              <a href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($antworten[$ask] == 2) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">Weiter</a>
           </div>
   	</div>
 
     <div id="myProgress">
-      <div id="myBar"></div>
+      <div id="myBar" class="bar" style="width: <?php echo (5 + 20 * ($f + $r)) - 5 ?>%"><?php echo (5 + 20 * ($f + $r)) - 5 ?>%</div>
     </div>
 
   	<script type="text/javascript" src="quest_script.js"></script>
