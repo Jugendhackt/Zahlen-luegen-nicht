@@ -1,16 +1,6 @@
 <?php
 $antworten = [2, 1, 2, 2, 1, 2, 1, 1, 2, 1];
 
-if(isset($_GET['ask'])) {
-    $ask = $_GET['ask'] + 1;
-    if ($ask == 11) {
-        ?>
-        <script>//window.location = "result.php";</script>
-        <?php
-    }
-} else {
-    $ask = 1;
-}
 
 if(isset($_GET['r'])) {
     $r = $_GET['r'];
@@ -23,6 +13,20 @@ if(isset($_GET['f'])) {
 } else {
     $f = 0;
 }
+
+
+if(isset($_GET['ask'])) {
+    $ask = $_GET['ask'] + 1;
+    if ($ask == 6) {
+        ?>
+        <script>window.location = "result.php?f=<?php echo $f ?>&r=<?php echo $r ?>";</script>
+        <?php
+    }
+} else {
+    $ask = 1;
+}
+
+
 if (isset($_GET['result'])) {
     if($_GET['result'] == "corr") {
         $r = $r + 1;
