@@ -48,3 +48,12 @@ h2 {
 	padding-top: 15px;
 	left: 17.5%;
 }
+
+
+
+
+#pieChart {
+	width: 65%;
+	background: black;
+	height: 25vw;
+}
