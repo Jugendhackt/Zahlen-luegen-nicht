@@ -1,0 +1,37 @@
+body {
+	background: #ffeaa7;
+	font-family: 'Roboto', sans-serif;
+	font-size: 23px;
+}
+
+h1 {
+	margin-top: 15px;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 50px;
+	color: #e17055;
+}
+
+div {
+	width: 65%;
+	text-align: center;
+	margin: 0 auto;
+}
+
+h2 {
+	padding-top: 30px;
+}
+
+
+#soLaeufts {
+	margin-bottom: 0;
+}
+
+#soAuch {
+	margin-top: 20px;
+}
+
+#explaination {
+	color: #e17055;
+}
+
