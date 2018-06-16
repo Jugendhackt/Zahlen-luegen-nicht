@@ -32,6 +32,8 @@ $headers = [];
 $beschs = [];
 $js1s = [];
 $js2s = [];
+$jsFull1s = [];
+$jsFull2s = [];
 $corrects = [];
 
 
@@ -41,6 +43,8 @@ while($row = $result->fetch_assoc()) {
     array_push($beschs, $row['expl']);
     array_push($js1s, $row['jsloc1']);
     array_push($js2s, $row['jsloc2']);
+    array_push($jsFull1s, $row['fullLoc1']);
+    array_push($jsFull2s, $row['fullLoc2']);
     array_push($corrects, $row['correct']);
 }
 
@@ -78,6 +82,8 @@ $header = $headers[$newAsk];
 $beschreibung = $beschs[$newAsk];
 $loc1 = $js1s[$newAsk];
 $loc2 = $js2s[$newAsk];
+$locFull1 = $jsFull1s[$newAsk];
+$locFull2 = $jsFull2s[$newAsk];
 $correct = $corrects[$newAsk];
 
 
@@ -127,14 +133,14 @@ if (isset($_GET['result'])) {
           <th>
             <a id="link1" href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($correct == 1) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">
               <div class="choice" id="choice1">
-                <canvas id="myChart1" ></canvas>
+                <canvas id="myChart1" onmouseover="window.open('<?php echo $locFull1;?>')"></canvas>
               </div>
             </a>
           </th>
           <th>
             <a id="link2"  href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($correct == 2) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">
               <div class="choice" id="choice2" >
-                <canvas id="myChart2" ></canvas>
+                <canvas id="myChart2" onmouseover="window.open('<?php echo $locFull2;?>')"></canvas>
               </div>
             </a>
           </th>
