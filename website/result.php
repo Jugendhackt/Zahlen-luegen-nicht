@@ -47,9 +47,9 @@ if (isset($_GET['result'])) {
 
 
   	<div id="explaination">
-  		<h2 id="soLaeufts">Sehr gut!</h2>
+  		<h2 id="soLaeufts">Geschafft!</h2>
   		<p id="soAuch">
-  		  Bacon ipsum dolor amet beef ribs short ribs tongue drumstick. Tenderloin frankfurter porchetta turkey, pork chop jerky ball tip pork loin burgdoggen pancetta meatball buffalo hamburger ham hock flank. Ball tip turducken capicola ham hock, pork belly shank corned beef pork loin andouille meatloaf.
+  		  Hier kannst Du Dein Ergebnis sehen. Spiele auch mal in anderen Rollen. Und so weiter...
   		</p>
   	</div>
 
