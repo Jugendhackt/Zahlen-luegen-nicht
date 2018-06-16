@@ -44,3 +44,7 @@ h2 {
 p {
 	padding-bottom: 35px;
 }
+
+.selected {
+	border: 12px solid #b2bec3;
+}

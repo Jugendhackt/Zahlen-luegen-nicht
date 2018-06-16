@@ -27,11 +27,11 @@
   	</div>
 
   	<div id="choices">
-	  	<div class="choice" id="choice1">
+	  	<div class="choice" id="choice1" onclick="choice(1)">
 		  	<p>Bacon ipsum dolor amet beef ribs short ribs tongue drumstick.</p>
 		  </div>
 
-		  <div class="choice" id="choice2">
+		  <div class="choice" id="choice2" onclick="choice(2)">
 		  	<p>Bacon ipsum dolor amet beef ribs short ribs tongue drumstick.</p>
 		  </div>
   	</div>
