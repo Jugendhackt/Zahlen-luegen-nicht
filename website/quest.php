@@ -115,7 +115,7 @@ if (isset($_GET['result'])) {
   </head>
   <body>
 
-  	<h1 onclick="window.location = 'index.html'">Headline</h1>
+  	<h1 onclick="window.location = 'index.html'">Zahlen l&uuml;gen <s>nicht</s>?</h1>
 
 
   	<div id="explaination">
