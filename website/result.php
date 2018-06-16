@@ -11,6 +11,14 @@ if(isset($_GET['f'])) {
   $f = 0;
 }
 
+if (isset($_GET['result'])) {
+    if($_GET['result'] == "corr") {
+        $r = $r + 1;
+    } elseif ($_GET['result'] == "wrong") {
+        $f = $f + 1;
+    }
+}
+
  ?>
 
 <!DOCTYPE html>

@@ -19,7 +19,7 @@ if(isset($_GET['ask'])) {
     $ask = $_GET['ask'] + 1;
     if ($ask == 6) {
         ?>
-        <script>window.location = "result.php?f=<?php echo $f ?>&r=<?php echo $r ?>";</script>
+        <script>window.location = "result.php?f=<?php echo $f ?>&r=<?php echo $r ?>&result=<?php echo $_GET['result'] ?>";</script>
         <?php
     }
 } else {
@@ -89,7 +89,7 @@ if(isset($_GET['role'])) {
   	</div>
 
     <div id="myProgress">
-      <div id="myBar" class="bar" style="width: <?php echo (5 + 20 * ($f + $r)) - 5 ?>%"></div>
+      <div id="myBar" class="bar" style="width: <?php echo (20 * ($f + $r))?>%"></div>
     </div>
 
   	<script type="text/javascript" src="quest_script.js"></script>
