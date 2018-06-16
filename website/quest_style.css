@@ -48,3 +48,20 @@ p {
 .selected {
 	border: 12px solid #b2bec3;
 }
+
+
+
+
+#myProgress {
+    width: 100%;
+    background-color: #e17055;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+}
+
+#myBar {
+    width: 5%;
+    height: 30px;
+    background-color: #0984e3;
+}

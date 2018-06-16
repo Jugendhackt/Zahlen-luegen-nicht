@@ -53,6 +53,9 @@ if(isset($_GET['ask'])) {
           </div>
   	</div>
 
+    <div id="myProgress">
+      <div id="myBar"></div>
+    </div>
 
   	<script type="text/javascript" src="quest_script.js"></script>
 
