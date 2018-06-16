@@ -122,36 +122,26 @@ if (isset($_GET['result'])) {
         </p>
   	</div>
   	<div id="choices">
-
-        <table>
-            <tr>
-                <th>
-                <a id="link1" href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($correct == 1) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">
-                    <div class="choice" id="choice1">
-                        <canvas id="myChart1" ></canvas>
-
-                    </div>
-                </a>
-                </th>
-                <th>
-            <a id="link2"  href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($correct == 2) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">
-                <div class="choice" id="choice2" >
-                    <canvas id="myChart2" ></canvas>
-                </div>
+      <table>
+        <tr>
+          <th>
+            <a id="link1" href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($correct == 1) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">
+              <div class="choice" id="choice1">
+                <canvas id="myChart1" ></canvas>
+              </div>
             </a>
-                </th>
-            </tr>
-        </table>
-
-
+          </th>
+          <th>
+            <a id="link2"  href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($correct == 2) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">
+              <div class="choice" id="choice2" >
+                <canvas id="myChart2" ></canvas>
+              </div>
+            </a>
+          </th>
+        </tr>
+      </table>
   	</div>
     
-
-
-
-
-
-
     <div id="myProgress">
       <div id="myBar" class="bar" style="width: <?php echo (20 * ($f + $r))?>%"></div>
     </div>
