@@ -1,5 +1,49 @@
 <?php
-$antworten = [2, 1, 2, 2, 1, 2, 1, 1, 2, 1];
+//$antworten = [2, 1, 2, 2, 1, 2, 1, 1, 2, 1];
+
+
+if(isset($_GET['role'])) {
+    $role = $_GET['role'];
+} else {
+    ?>
+    <script>window.location = "index.html";</script>
+    <?php
+}
+
+
+
+
+$mysqli = new mysqli("localhost", "root", "", "zahlen");
+if ($mysqli->connect_errno) {
+    die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
+}
+$id = 100;
+$sql = "SELECT * FROM graphs WHERE `class` = ".$role;
+$statement = $mysqli->prepare($sql);
+
+$statement->execute();
+
+$result = $statement->get_result();
+
+$classes = [];
+$headers = [];
+$beschs = [];
+$loc1s = [];
+$loc2s = [];
+$corrects = [];
+
+
+while($row = $result->fetch_assoc()) {
+    echo $row['ID'];
+    array_push($classes, $row['class']);
+    array_push($headers, $row['header']);
+    array_push($beschs, $row['expl']);
+    array_push($loc1s, $row['tabloc1']);
+    array_push($loc2s, $row['tabloc2']);
+    array_push($corrects, $row['correct']);
+}
+
+
 
 
 if(isset($_GET['r'])) {
@@ -26,6 +70,15 @@ if(isset($_GET['ask'])) {
 } else {
     $ask = 1;
 }
+$newAsk = $ask - 1;
+
+$class = $classes[$newAsk];
+$header = $headers[$newAsk];
+$beschreibung = $beschs[$newAsk];
+$loc1 = $loc1s[$newAsk];
+$loc2 = $loc2s[$newAsk];
+$correct = $corrects[$newAsk];
+
 
 
 if (isset($_GET['result'])) {
@@ -36,13 +89,7 @@ if (isset($_GET['result'])) {
     }
 }
 
-if(isset($_GET['role'])) {
-    $role = $_GET['role'];
-} else {
-    ?>
-    <script>window.location = "index.html";</script>
-    <?php
-}
+
 ?>
 
 <!DOCTYPE html>
@@ -73,23 +120,23 @@ if(isset($_GET['role'])) {
 
 
   	<div id="explaination">
-  		<h2 id="soLaeufts">Das Problem</h2>
+  		<h2 id="soLaeufts"><?php echo $header; ?></h2>
   		<p id="soAuch">
-  		  Bacon ipsum dolor amet beef ribs short ribs tongue drumstick. Tenderloin frankfurter porchetta turkey, pork chop jerky ball tip pork loin burgdoggen pancetta meatball buffalo hamburger ham hock flank. Ball tip turducken capicola ham hock, pork belly shank corned beef pork loin andouille meatloaf.
-  		</p>
+  		<?php echo $beschreibung ?>
+        </p>
   	</div>
 
   	<div id="choices">
         <a id="link1" href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($antworten[$ask] == 1) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">
             <div class="choice" id="choice1" onclick="choice(1)">
-		      	<p>Bacon ipsum dolor amet beef ribs short ribs tongue drumstick.</p>
+		      	<img class="choiceImg" src="<?php echo $loc1; ?>" alt="Erster Graph">
             </div>
         </a>
 
 
         <a id="link2" href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($antworten[$ask] == 2) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">
             <div class="choice" id="choice2" onclick="choice(2)">
-                <p>Bacon ipsum dolor amet beef ribs short ribs tongue drumstick.</p>
+                <img class="choiceImg" src="<?php echo $loc2; ?>" alt="Zweiter Graph">
             </div>
         </a>
 
