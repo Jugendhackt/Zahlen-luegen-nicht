@@ -132,7 +132,8 @@ if (isset($_GET['result'])) {
                 <th>
                 <a id="link1" href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($correct == 1) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">
                     <div class="choice" id="choice1" onclick="choice(1)">
-		             	<img class="choiceImg" src="<?php echo $loc1; ?>" alt="Erster Graph">
+		             	    <!--<img class="choiceImg" src="<?php echo $loc1; ?>" alt="Erster Graph">-->
+                      <canvas id="c1"></canvas>
                     </div>
                 </a>
                 </th>
