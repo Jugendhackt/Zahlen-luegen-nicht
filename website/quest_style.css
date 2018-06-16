@@ -24,18 +24,22 @@ div {
 }
 
 #choices {
-	width: 75%;
-	margin: 0 auto;
+
+
+	max-width: 60%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .choice {
-	width: 40%;
+	max-width: 800px;
 	color: #ffeaa7;
 	background: #0984e3;
 	border-radius: 25px;
 	display: inline-block;
 	margin: 0 2%;
 	height: 500px;
+	padding: 20px;
 }
 
 h2 {
@@ -92,6 +96,13 @@ p {
 
 
 .choiceImg {
-	width: 90%;
+	display: inline-block;
 	height: auto;
+
+}
+
+
+#frame {
+	/*margin-left: auto;
+	margin-right: auto;*/
 }

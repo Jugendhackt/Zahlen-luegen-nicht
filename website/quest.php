@@ -34,7 +34,6 @@ $corrects = [];
 
 
 while($row = $result->fetch_assoc()) {
-    echo $row['ID'];
     array_push($classes, $row['class']);
     array_push($headers, $row['header']);
     array_push($beschs, $row['expl']);
@@ -125,22 +124,32 @@ if (isset($_GET['result'])) {
   		<?php echo $beschreibung ?>
         </p>
   	</div>
-
+<div id="frame">
   	<div id="choices">
-        <a id="link1" href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($antworten[$ask] == 1) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">
-            <div class="choice" id="choice1" onclick="choice(1)">
-		      	<img class="choiceImg" src="<?php echo $loc1; ?>" alt="Erster Graph">
-            </div>
-        </a>
 
+        <table>
+            <tr>
+                <th>
+                <a id="link1" href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($correct == 1) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">
+                    <div class="choice" id="choice1" onclick="choice(1)">
+		             	<img class="choiceImg" src="<?php echo $loc1; ?>" alt="Erster Graph">
+                    </div>
+                </a>
+                </th>
+                <th>
+            <a id="link2" href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($correct == 2) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">
+                <div class="choice" id="choice2" onclick="choice(2)">
+                    <img class="choiceImg" src="<?php echo $loc2; ?>" alt="Zweiter Graph">
+                </div>
+            </a>
+                </th>
+            </tr>
+        </table>
 
-        <a id="link2" href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($antworten[$ask] == 2) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">
-            <div class="choice" id="choice2" onclick="choice(2)">
-                <img class="choiceImg" src="<?php echo $loc2; ?>" alt="Zweiter Graph">
-            </div>
-        </a>
 
   	</div>
+</div>
+
 
     <div id="myProgress">
       <div id="myBar" class="bar" style="width: <?php echo (20 * ($f + $r))?>%"></div>
