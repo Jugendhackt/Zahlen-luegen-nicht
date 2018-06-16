@@ -11,12 +11,12 @@ var chart = new Chart(ctx, {
 
     // The data for our dataset
     data: {
-        labels: ["2014", "2015", "2016", "2017"],
+        labels: ["2015", "2016", "2017"],
         datasets: [{
             label: "Asylanteneinwanderung",
             backgroundColor: 'rgb(25, 188, 145)',
             borderColor: 'rgb(26, 188, 156)',
-            data: [100000, 1200000, 2500000, 10600000],
+            data: [1200000, 2500000, 10600000],
         }]
     },
 
@@ -25,8 +25,8 @@ var chart = new Chart(ctx, {
             scales: {
                 yAxes: [{
                     ticks: {
-                        min: 0,
-                        beginAtZero: true
+                        min: 1200000,
+                        beginAtZero: false
                     }
                 }]
             }
