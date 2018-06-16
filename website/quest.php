@@ -28,8 +28,8 @@ $result = $statement->get_result();
 $classes = [];
 $headers = [];
 $beschs = [];
-$loc1s = [];
-$loc2s = [];
+$js1s = [];
+$js2s = [];
 $corrects = [];
 
 
@@ -37,8 +37,8 @@ while($row = $result->fetch_assoc()) {
     array_push($classes, $row['class']);
     array_push($headers, $row['header']);
     array_push($beschs, $row['expl']);
-    array_push($loc1s, $row['tabloc1']);
-    array_push($loc2s, $row['tabloc2']);
+    array_push($js1s, $row['jsloc1']);
+    array_push($js2s, $row['jsloc2']);
     array_push($corrects, $row['correct']);
 }
 
@@ -74,8 +74,8 @@ $newAsk = $ask - 1;
 $class = $classes[$newAsk];
 $header = $headers[$newAsk];
 $beschreibung = $beschs[$newAsk];
-$loc1 = $loc1s[$newAsk];
-$loc2 = $loc2s[$newAsk];
+$loc1 = $js1s[$newAsk];
+$loc2 = $js2s[$newAsk];
 $correct = $corrects[$newAsk];
 
 
@@ -104,7 +104,7 @@ if (isset($_GET['result'])) {
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <!-- Fontawesome CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
 <!--
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
@@ -132,14 +132,14 @@ if (isset($_GET['result'])) {
                 <th>
                 <a id="link1" href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($correct == 1) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">
                     <div class="choice" id="choice1" onclick="choice(1)">
-		             	<img class="choiceImg" src="<?php echo $loc1; ?>" alt="Erster Graph">
+                        <canvas id="myChart1"></canvas>
                     </div>
                 </a>
                 </th>
                 <th>
             <a id="link2" href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($correct == 2) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">
                 <div class="choice" id="choice2" onclick="choice(2)">
-                    <img class="choiceImg" src="<?php echo $loc2; ?>" alt="Zweiter Graph">
+                    <canvas id="myChart2"></canvas>
                 </div>
             </a>
                 </th>
@@ -156,6 +156,7 @@ if (isset($_GET['result'])) {
     </div>
 
   	<script type="text/javascript" src="quest_script.js"></script>
-
+  <script src="<?php echo $loc1 ?>"></script>
+    <script src="<?php echo $loc2 ?>"></script>
   </body>
 </html>
