@@ -35,3 +35,16 @@ h2 {
 	color: #e17055;
 }
 
+#nochmal {
+	font-size: 40px;
+	width: 65%;
+	color: #ffeaa7;
+	background: #0984e3;
+	border-radius: 25px;
+	position: absolute;
+	bottom: 30px;
+	margin: 0 auto;
+	height: 60px;
+	padding-top: 15px;
+	left: 17.5%;
+}
