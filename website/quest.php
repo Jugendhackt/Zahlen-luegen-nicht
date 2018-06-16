@@ -75,17 +75,17 @@ if(isset($_GET['role'])) {
   	<div id="choices">
 	  	<div class="choice" id="choice1" onclick="choice(1)">
 		  	<p>Bacon ipsum dolor amet beef ribs short ribs tongue drumstick.</p>
-            <a href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($antworten[$ask] == 1) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">Weiter</a>
+            <a hidden id="link1" href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($antworten[$ask] == 1) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">Weiter</a>
         </div>
 
 		  <div class="choice" id="choice2" onclick="choice(2)">
 		  	<p>Bacon ipsum dolor amet beef ribs short ribs tongue drumstick.</p>
-              <a href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($antworten[$ask] == 2) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">Weiter</a>
+              <a hidden id="link2" href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($antworten[$ask] == 2) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">Weiter</a>
           </div>
   	</div>
 
     <div id="myProgress">
-      <div id="myBar" class="bar" style="width: <?php echo (5 + 20 * ($f + $r)) - 5 ?>%"><?php echo (5 + 20 * ($f + $r)) - 5 ?>%</div>
+      <div id="myBar" class="bar" style="width: <?php echo (5 + 20 * ($f + $r)) - 5 ?>%"></div>
     </div>
 
   	<script type="text/javascript" src="quest_script.js"></script>
