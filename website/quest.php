@@ -125,15 +125,16 @@ if (isset($_GET['result'])) {
             <tr>
                 <th>
                 <a id="link1" href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($correct == 1) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">
-                    <div class="choice" id="choice1" onclick="choice(1)">
-                        <canvas id="myChart1"></canvas>
+                    <div class="choice" id="choice1" onclick="choice(1)" onhover="document.getElementById('modal01').style.display='block'">
+                        <canvas id="myChart1" ></canvas>
+
                     </div>
                 </a>
                 </th>
                 <th>
             <a id="link2" href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($correct == 2) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">
-                <div class="choice" id="choice2" onclick="choice(2)">
-                    <canvas id="myChart2"></canvas>
+                <div class="choice" id="choice2" onclick="document.getElementById('modal02').style.display='block'">
+                    <canvas id="myChart2" ></canvas>
                 </div>
             </a>
                 </th>
@@ -147,7 +148,7 @@ if (isset($_GET['result'])) {
     <div id="modal01" class="w3-modal">
         <div class="w3-modal-content">
             <div class="w3-container">
-      <span onclick="document.getElementById('id01').style.display='none'"
+      <span onclick="document.getElementById('modal01').style.display='none'"
             class="w3-button w3-display-topright">&times;</span>
                 <canvas id="myChart1"></canvas>
             </div>
@@ -155,13 +156,14 @@ if (isset($_GET['result'])) {
     </div>
 
 
-    <!-- Modal 1 -->
+    <!-- Modal 2 -->
     <div id="modal02" class="w3-modal">
         <div class="w3-modal-content">
             <div class="w3-container">
-      <span onclick="document.getElementById('id02').style.display='none'"
+      <span onclick="document.getElementById('modal02').style.display='none'"
             class="w3-button w3-display-topright">&times;</span>
-                <canvas id="myChart1"></canvas>
+                <h1>Test</h1>
+                <canvas id="myChart2"></canvas>
             </div>
         </div>
     </div>
