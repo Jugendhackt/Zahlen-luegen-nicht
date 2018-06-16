@@ -1,3 +1,18 @@
+<?php
+$antworten = [2, 1, 2, 2, 1, 2, 1, 1, 2, 1];
+
+if(isset($_GET['ask'])) {
+    $ask = $_GET['ask'] + 1;
+    if ($ask == 11) {
+        ?>
+        <script>window.location = "result.php";</script>
+        <?php
+    }
+} else {
+    $ask = 1;
+}
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -29,11 +44,13 @@
   	<div id="choices">
 	  	<div class="choice" id="choice1" onclick="choice(1)">
 		  	<p>Bacon ipsum dolor amet beef ribs short ribs tongue drumstick.</p>
+            <a href="quest.php?result=<?php if ($antwort == 1) {echo "corr";} else {echo "wrong";} ?>"&ask="<?php echo $ask ?>">Weiter</a>
 		  </div>
 
 		  <div class="choice" id="choice2" onclick="choice(2)">
 		  	<p>Bacon ipsum dolor amet beef ribs short ribs tongue drumstick.</p>
-		  </div>
+              <a href="quest.php?result=<?php if ($antwort == 2) {echo "corr";} else {echo "wrong";} ?>"&ask="<?php echo $ask ?>">Weiter</a>
+          </div>
   	</div>
 
 
