@@ -1,96 +1,3 @@
-<?php
-//$antworten = [2, 1, 2, 2, 1, 2, 1, 1, 2, 1];
-
-
-if(isset($_GET['role'])) {
-    $role = $_GET['role'];
-} else {
-    ?>
-    <script>window.location = "index.html";</script>
-    <?php
-}
-
-
-
-
-$mysqli = new mysqli("localhost", "root", "", "zahlen");
-if ($mysqli->connect_errno) {
-    die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
-}
-$id = 100;
-$sql = "SELECT * FROM graphs WHERE `class` = ".$role;
-$statement = $mysqli->prepare($sql);
-
-$statement->execute();
-
-$result = $statement->get_result();
-
-$classes = [];
-$headers = [];
-$beschs = [];
-$loc1s = [];
-$loc2s = [];
-$corrects = [];
-
-
-while($row = $result->fetch_assoc()) {
-    array_push($classes, $row['class']);
-    array_push($headers, $row['header']);
-    array_push($beschs, $row['expl']);
-    array_push($loc1s, $row['tabloc1']);
-    array_push($loc2s, $row['tabloc2']);
-    array_push($corrects, $row['correct']);
-}
-
-
-
-
-if(isset($_GET['r'])) {
-    $r = $_GET['r'];
-} else {
-    $r = 0;
-}
-
-if(isset($_GET['f'])) {
-    $f = $_GET['f'];
-} else {
-    $f = 0;
-}
-
-
-
-if(isset($_GET['ask'])) {
-    $ask = $_GET['ask'] + 1;
-    if ($ask == 6) {
-        ?>
-        <script>window.location = "result.php?f=<?php echo $f ?>&r=<?php echo $r ?>&result=<?php echo $_GET['result'] ?>";</script>
-        <?php
-    }
-} else {
-    $ask = 1;
-}
-$newAsk = $ask - 1;
-
-$class = $classes[$newAsk];
-$header = $headers[$newAsk];
-$beschreibung = $beschs[$newAsk];
-$loc1 = $loc1s[$newAsk];
-$loc2 = $loc2s[$newAsk];
-$correct = $corrects[$newAsk];
-
-
-
-if (isset($_GET['result'])) {
-    if($_GET['result'] == "corr") {
-        $r = $r + 1;
-    } elseif ($_GET['result'] == "wrong") {
-        $f = $f + 1;
-    }
-}
-
-
-?>
-
 <!DOCTYPE html>
 <html>
   <head>
@@ -105,12 +12,6 @@ if (isset($_GET['result'])) {
     <!-- Fontawesome CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-<!--
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous"></script>
--->
-
     <link rel="stylesheet" type="text/css" href="quest_style.css">
   </head>
   <body>
@@ -119,37 +20,28 @@ if (isset($_GET['result'])) {
 
 
   	<div id="explaination">
-  		<h2 id="soLaeufts"><?php echo $header; ?></h2>
-  		<p id="soAuch">
-  		<?php echo $beschreibung ?>
-        </p>
+  		<h2 id="ueberschrift">
+  		<p id="beschreibung"></p>
   	</div>
-<div id="frame">
-  	<div id="choices">
 
+    <div id="frame">
+      <div id="choices">
         <table>
             <tr>
                 <th>
-                <a id="link1" href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($correct == 1) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">
-                    <div class="choice" id="choice1" onclick="choice(1)">
-		             	    <!--<img class="choiceImg" src="<?php echo $loc1; ?>" alt="Erster Graph">-->
-                      <canvas id="c1"></canvas>
-                    </div>
-                </a>
+                  <div class="choice">
+                    <canvas id="canvas1"></canvas>
+                  </div>
                 </th>
                 <th>
-            <a id="link2" href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($correct == 2) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">
-                <div class="choice" id="choice2" onclick="choice(2)">
-                    <img class="choiceImg" src="<?php echo $loc2; ?>" alt="Zweiter Graph">
-                </div>
-            </a>
+                  <div class="choice">
+                    <canvas id="canvas2"></canvas>
+                  </div>
                 </th>
             </tr>
         </table>
-
-
-  	</div>
-</div>
+    	</div>
+  </div>
 
 
     <div id="myProgress">
