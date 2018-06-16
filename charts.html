@@ -1,0 +1,23 @@
+<canvas id="myChart"></canvas>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'bar',
+
+    // The data for our dataset
+    data: {
+        labels: ["1997", "1998", "1999", "2000", "2001"],
+        datasets: [{
+            label: "Global Warming",
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [10, 5, 2, 20, 30, 45],
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
