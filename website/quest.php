@@ -1,6 +1,8 @@
 <?php
 //$antworten = [2, 1, 2, 2, 1, 2, 1, 1, 2, 1];
 
+error_reporting(0);
+ini_set('display_errors', 0);
 
 if(isset($_GET['role'])) {
     $role = $_GET['role'];
