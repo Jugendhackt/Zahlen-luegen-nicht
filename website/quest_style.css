@@ -39,7 +39,8 @@ div {
 }
 
 h2 {
-	padding-top: 30px;
+	padding-top: 0;
+	margin-top: 0;
 }
 
 p {
@@ -68,4 +69,15 @@ p {
 
 .bar {
 	color: #ffeaa7;
+}
+
+#link1 {
+	width: 75%;
+	text-decoration: none;
+	margin: 0 auto;
+}
+#link2 {
+	width: 75%;
+	text-decoration: none;
+	margin: 0 auto;
 }
