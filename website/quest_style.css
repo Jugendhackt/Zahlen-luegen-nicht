@@ -27,11 +27,11 @@ div {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
-	width: 75%;
+	width: 95%;
 }
 
 .choice {
-	width: 90%;
+	width: 95%;
 	color: #ffeaa7;
 	background: #cee9fd;
 	border-radius: 25px;
@@ -79,12 +79,12 @@ p {
 	color: #ffeaa7;
 }
 
-.choiceImg {
-	display: inline-block;
-	height: auto;
-	vertical-align: middle;
+#myChart1 {
+	margin-top: 50px;
 }
-
+#myChart2 {
+	margin-top: 50px;
+}
 
 table {
 	width: 100%;
