@@ -13,7 +13,7 @@ if(isset($_GET['role'])) {
 
 
 
-$mysqli = new mysqli("localhost", "root", "", "zahlen");
+$mysqli = new mysqli("localhost", "root", "", "jh");
 if ($mysqli->connect_errno) {
     die("Verbindung fehlgeschlagen: " . $mysqli->connect_error);
 }
@@ -105,11 +105,6 @@ if (isset($_GET['result'])) {
     <!-- Fontawesome CDN -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-<!--
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous"></script>
--->
 
     <link rel="stylesheet" type="text/css" href="quest_style.css">
   </head>
@@ -124,7 +119,6 @@ if (isset($_GET['result'])) {
   		<?php echo $beschreibung ?>
         </p>
   	</div>
-<div id="frame">
   	<div id="choices">
 
         <table>
@@ -148,7 +142,7 @@ if (isset($_GET['result'])) {
 
 
   	</div>
-</div>
+    
     <!-- Modal 1 -->
     <div id="modal01" class="w3-modal">
         <div class="w3-modal-content">

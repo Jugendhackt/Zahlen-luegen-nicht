@@ -24,16 +24,14 @@ div {
 }
 
 #choices {
-
 	text-align: center;
-	max-width: 60%;
 	margin-left: auto;
 	margin-right: auto;
 	width: 75%;
 }
 
 .choice {
-	width: 80%;
+	width: 90%;
 	color: #ffeaa7;
 	background: #cee9fd;
 	border-radius: 25px;
@@ -64,8 +62,6 @@ p {
 	padding-bottom: 0;
 }
 
-
-
 #myProgress {
   width: 100%;
   background-color: #e17055;
@@ -82,37 +78,23 @@ p {
 .bar {
 	color: #ffeaa7;
 }
-/*
-#link1 {
-	width: 75%;
-	text-decoration: none;
-	margin: 0 auto;
-}
-#link2 {
-	width: 75%;
-	text-decoration: none;
-	margin: 0 auto;
-}
 
-*/
 .choiceImg {
 	display: inline-block;
 	height: auto;
-
+	vertical-align: middle;
 }
 
-/*
-#frame {
-	margin-left: auto;
-	margin-right: auto;
-	width: 70%;
-}
-*/
+
 table {
 	width: 100%;
 }
 tr {
 	width: 50%;
+}
+th {
+	width: 50%;
+	padding: 30px;
 }
 
 
