@@ -1,3 +1,18 @@
+<?php 
+if(isset($_GET['r'])) {
+  $r = $_GET['r'];
+} else {
+  $r = 0;
+}
+
+if(isset($_GET['f'])) {
+  $f = $_GET['f'];
+} else {
+  $f = 0;
+}
+
+ ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -13,6 +28,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=latin-ext" rel="stylesheet">
 
+    <script src="https://cdn.anychart.com/js/8.0.1/anychart-core.min.js"></script>
+    <script src="https://cdn.anychart.com/js/8.0.1/anychart-pie.min.js"></script>
+
     <link rel="stylesheet" type="text/css" href="result_style.css">
   </head>
   <body>
@@ -27,13 +45,56 @@
   		</p>
   	</div>
 
-    <div id="resultDiagram">
-      
+    <div id="pieChart">
+
     </div>
 
-    <div id="nochmal">
-      Noch eine Runde?
-    </div>
+    <a href="index.html">
+      <div id="nochmal">
+        Noch eine Runde?
+      </div>
+    </a>
+
+    <script type="text/javascript">
+      
+      anychart.onDocumentReady(function() {
+
+        // set the data
+        var data = [
+          {
+            x: "Rigth", 
+            value: <?php echo $r; ?>, 
+            normal: {
+              fill: "#00b894",       
+            },
+            exploded: true
+          },
+          {x: "Wrong", value: <?php echo $f; ?>, 
+            normal: {
+              fill: "#d63031",      
+            }
+          }
+        ];
+
+        // create the chart
+        var chart = anychart.pie();
+
+        // add the data
+        chart.data(data);
+
+        chart.background().fill("#ffeaa7");
+        // set legend position
+        chart.legend().position("right");
+        // set items layout
+        chart.legend().itemsLayout("vertical");
+
+        // display the chart in the container
+        chart.container('pieChart');
+        chart.draw();
+
+
+      });
+    </script>
 
   </body>
 </html>
