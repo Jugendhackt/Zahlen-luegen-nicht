@@ -1,6 +1,6 @@
 const data = [-0.04, -0.26, -0.09, -0.34, -0.20, -0.19, 0.13, -0.17, -0.10, 0.13, 0.30, 0.63, 0.82];
 const colours = data.map((value) => value < 0 ? 'red' : 'blue');
-var ctx = document.getElementById('myChart').getContext('2d');
+var ctx = document.getElementById('myChart1').getContext('2d');
 var chart = new Chart(ctx, {
     // The type of chart we want to create
     type: 'bar',

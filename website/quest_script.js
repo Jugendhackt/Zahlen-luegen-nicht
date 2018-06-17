@@ -36,8 +36,7 @@ $("body").on("keyup", function(event) {
 
 function wopen(i) {
 
-    if(pressed) {
-        window.open(i);
-    }
+       // window.open(i);
+9
 }
 
