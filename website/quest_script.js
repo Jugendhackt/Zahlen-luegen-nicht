@@ -19,15 +19,25 @@ function choice(ch) {
 }
 
 
-<<<<<<< HEAD
-$("body").on("keypress", function(event) {
+$("body").on("keydown", function(event) {
     if (event.which == 97) {
-        
+        pressed = true;
+        console.log("true");
     }
 });
-=======
+
+$("body").on("keyup", function(event) {
+    if (event.which == 97) {
+        pressed = false;
+        console.log("true");
+    }
+});
+
 
 function wopen(i) {
 
+    if(pressed) {
+        window.open(i);
+    }
 }
->>>>>>> origin/master
+
