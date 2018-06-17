@@ -103,6 +103,7 @@ if (isset($_GET['result'])) {
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
     <style type="text/css">
       html {overflow-x: hidden;}
       body {overflow-x: hidden;}
@@ -118,7 +119,7 @@ if (isset($_GET['result'])) {
   </head>
   <body>
 
-  	<h1 onclick="window.location = 'index.html'">Zahlen l&uuml;gen <s>nicht</s>?</h1>
+  	<h1 onclick="window.location = 'index.html'">Zahlen lügen <s>nicht</s>?</h1>
 
 
   	<div id="explaination">
