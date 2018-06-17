@@ -133,14 +133,14 @@ if (isset($_GET['result'])) {
           <th>
             <a id="link1" href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($correct == 1) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">
               <div class="choice" id="choice1">
-                <canvas id="myChart1" onmouseover="window.open('<?php echo $locFull1;?>')"></canvas>
+                <canvas id="myChart1" onmouseover="wopen('<?php echo $locFull1;?>')"></canvas>
               </div>
             </a>
           </th>
           <th>
             <a id="link2"  href="quest.php?r=<?php echo $r ?>&f=<?php echo $f ?>&result=<?php if ($correct == 2) {echo "corr";} else {echo "wrong";} ?>&ask=<?php echo $ask ?>&role=<?php echo $role ?>">
               <div class="choice" id="choice2" >
-                <canvas id="myChart2" onmouseover="window.open('<?php echo $locFull2;?>')"></canvas>
+                <canvas id="myChart2" onmouseover="wopen('<?php echo $locFull2;?>')"></canvas>
               </div>
             </a>
           </th>

@@ -1,5 +1,5 @@
 // Script for Quests
-
+var pressed = false;
 function choice(ch) {
     /*if (ch == 1) {
         document.getElementById("choice1").classList.add("selected")
@@ -19,8 +19,15 @@ function choice(ch) {
 }
 
 
+<<<<<<< HEAD
 $("body").on("keypress", function(event) {
     if (event.which == 97) {
         
     }
 });
+=======
+
+function wopen(i) {
+
+}
+>>>>>>> origin/master
