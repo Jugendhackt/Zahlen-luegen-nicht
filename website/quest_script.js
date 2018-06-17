@@ -17,3 +17,10 @@ function choice(ch) {
         document.getElementById("link1").style.display = "none";
     }*/
 }
+
+
+$("body").on("keypress", function(event) {
+    if (event.which == 97) {
+        
+    }
+});
