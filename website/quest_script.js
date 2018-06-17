@@ -1,5 +1,5 @@
 // Script for Quests
-
+var pressed = false;
 function choice(ch) {
     /*if (ch == 1) {
         document.getElementById("choice1").classList.add("selected")
@@ -16,4 +16,10 @@ function choice(ch) {
         document.getElementById("link2").style.display = "inline-block";
         document.getElementById("link1").style.display = "none";
     }*/
+}
+
+
+
+function wopen(i) {
+
 }
