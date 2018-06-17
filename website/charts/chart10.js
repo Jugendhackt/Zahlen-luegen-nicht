@@ -1,17 +1,16 @@
-var ctx = document.getElementById('myChart1').getContext('2d');
+var ctx = document.getElementById('myChart2').getContext('2d');
 var chart = new Chart(ctx, {
     // The type of chart we want to create
-    type: 'line',
+    type: 'bar',
 
     // The data for our dataset
     data: {
-        labels: ["1Q 2007", "1Q 2010", "1Q 2012", "1Q 2014"],
+        labels: ["1998", "2006","2008","2010","2012","2014","2016"],
         datasets: [{
-            label: "Umsatz in Milliarden US-Dollar",
-            backgroundColor: 'rgba(25, 188, 145, 0)',
+            label: "Arbeitslosenquote in Prozent",
+            backgroundColor: 'rgb(25, 188, 145)',
             borderColor: 'rgb(26, 188, 156)',
-            data: [3.02, 7.13, 13.19, 19.74],
-
+            data: [11.1, 10.8,7.8,7.7,6.8,6.7,6.1],
         }]
     },
 
